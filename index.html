@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Untitled Document</title>
+<title>Home</title>
 	<link rel="stylesheet" href="main.css">
 	
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,8 +38,11 @@
 		
 	</div>
 	
-	<button type="button">Enter</button>
 	
+	<div class="center">
+	<button class="button" type="button">Enter</button>
+	<button class="button" onclick="getLocation()">Coordinates</button>
+	</div>
 	
 	<script>
 const x = document.getElementById("demo");
@@ -47,14 +50,14 @@ const x = document.getElementById("demo");
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
-  } else {
+  } else { 
     x.innerHTML = "Geolocation is not supported by this browser.";
   }
 }
 
 function showPosition(position) {
   x.innerHTML = "Latitude: " + position.coords.latitude + 
-  "<br>Longitude: " + position.coords.longitude; 
+  "<br>Longitude: " + position.coords.longitude;
 }
 </script>
 	
